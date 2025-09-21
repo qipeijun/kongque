@@ -1,0 +1,44 @@
+{
+  "name": "edu-chat-app",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite --mode dev",
+    "build": "vite build --mode prod",
+    "preview": "vite preview",
+    "remove-dist": "rm -rf edu-ai-chat edu-ai-chat.zip"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.0",
+    "ant-design-vue": "^4.0.0",
+    "ant-design-x-vue": "1.2.9",
+    "axios": "^1.10.0",
+    "d3": "7.8.5",
+    "dayjs": "^1.11.13",
+    "github-markdown-css": "^5.8.1",
+    "highlight.js": "^11.11.1",
+    "katex": "0.16.9",
+    "lodash": "^4.17.21",
+    "markdown-it": "^14.1.0",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-emoji": "^3.0.0",
+    "markdown-it-katex": "^2.0.3",
+    "markdown-it-mathjax3": "^4.3.2",
+    "markdown-it-task-lists": "^2.1.1",
+    "markmap-common": "0.14.2",
+    "markmap-lib": "0.14.2",
+    "markmap-view": "0.14.2",
+    "perfect-scrollbar": "^1.5.6",
+    "pinia": "^3.0.3",
+    "vditor": "^3.11.1",
+    "vue": "^3.4.0",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "less": "^4.3.0",
+    "vite": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

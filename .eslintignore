@@ -1,0 +1,15 @@
+# 忽略目录
+build/
+tests/
+monitor-web
+monitor-web.zip
+
+# node 覆盖率文件
+coverage/
+
+# 忽略文件
+
+iconfont.js
+
+*.js
+*.vue
