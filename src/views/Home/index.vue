@@ -157,7 +157,7 @@ const switchTab = (tab) => {
 // 从 JSON 数据计算统计数据
 const calculateStats = async () => {
     try {
-        const response = await fetch('/src/views/Home/mock/data.json')
+        const response = await fetch('/mock/data.json')
         const jsonData = await response.json()
 
         // 计算服务器统计

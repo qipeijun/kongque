@@ -5,7 +5,7 @@ import {useUserStore} from "../store/user";
 
 //  ============================================================ 枚举相关 ============================================================
 
-export const APP_NAME = 'edu-ai-chat'
+export const APP_NAME = 'server-admin'
 
 // 聊天状态
 export const CHAT_STATUS = {

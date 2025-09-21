@@ -119,8 +119,8 @@ const fetchServerData = async () => {
         // 模拟网络延迟
         await new Promise(resolve => setTimeout(resolve, 800))
 
-        // 从 JSON 文件导入数据
-        const response = await fetch('/src/views/Home/mock/data.json')
+    // 从 JSON 文件导入数据
+    const response = await fetch('/mock/data.json')
         const jsonData = await response.json()
 
         // 生成随机内存使用量的函数

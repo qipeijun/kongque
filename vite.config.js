@@ -19,7 +19,7 @@ const timestamp = getTimestamp();
 export default defineConfig({
     // 打包配置
     build: {
-        outDir: 'edu-ai-chat',
+        outDir: 'server-admin',
         assetsDir: 'static',
         brotliSize: false, // 设置为false将禁用构建的brotli压缩大小报告。可以稍微提高构建速度
         minify: true, // 开启压缩
@@ -77,7 +77,7 @@ export default defineConfig({
         proxy: {
             '/api': {
                 // target: 'http://192.168.11.106:12301',
-                target: 'https://edu-test-ai-chat.szyh-smart.cn',
+                target: 'https://server-admin.szyh-smart.cn',
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, '')
             },

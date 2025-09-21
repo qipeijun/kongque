@@ -143,7 +143,7 @@ const fetchGPUData = async () => {
         await new Promise(resolve => setTimeout(resolve, 800))
 
         // 从 JSON 文件导入数据
-        const response = await fetch('/src/views/Home/mock/data.json')
+        const response = await fetch('/mock/data.json')
         const jsonData = await response.json()
 
         // 转换数据格式以匹配表格列

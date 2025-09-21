@@ -1,11 +1,11 @@
 {
-  "name": "edu-chat-app",
+  "name": "server-admin",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite --mode dev",
     "build": "vite build --mode prod",
     "preview": "vite preview",
-    "remove-dist": "rm -rf edu-ai-chat edu-ai-chat.zip"
+    "remove-dist": "rm -rf server-admin server-admin.zip"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.0",

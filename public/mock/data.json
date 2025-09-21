@@ -1,0 +1,105 @@
+{
+  "server_resources": [
+    {
+      "gpu_id": "SERVER-001",
+      "server": {
+        "name": "服务器01",
+        "id": "SRV-2023-001"
+      },
+      "cpu_model": "8462Y *2",
+      "status": "运行中",
+      "memory": "1024GB",
+      "storage": "480GB*2+3840GB*4"
+    }
+  ],
+  "gpu_resources": [
+    {
+      "gpu_id": 0,
+      "name": "NVIDIA HGX H800 8-GPU",
+      "persistence_mode": "On",
+      "bus_id": "00000000:10:00.0",
+      "display_active": "off",
+      "memory_usage": "1MiB / 81920MiB",
+      "gpu_utilization": "45%",
+      "compute_mode": "Default",
+      "mig_mode": "Disabled"
+    },
+    {
+      "gpu_id": 1,
+      "name": "NVIDIA HGX H800 8-GPU",
+      "persistence_mode": "On",
+      "bus_id": "00000000:16:00.0",
+      "display_active": "off",
+      "memory_usage": "1MiB / 81920MiB",
+      "gpu_utilization": "42%",
+      "compute_mode": "Default",
+      "mig_mode": "Disabled"
+    },
+    {
+      "gpu_id": 2,
+      "name": "NVIDIA HGX H800 8-GPU",
+      "persistence_mode": "On",
+      "bus_id": "00000000:49:00.0",
+      "display_active": "off",
+      "memory_usage": "1MiB / 81920MiB",
+      "gpu_utilization": "35%",
+      "compute_mode": "Default",
+      "mig_mode": "Disabled"
+    },
+    {
+      "gpu_id": 3,
+      "name": "NVIDIA HGX H800 8-GPU",
+      "persistence_mode": "On",
+      "bus_id": "00000000:4D:00.0",
+      "display_active": "off",
+      "memory_usage": "1MiB / 81920MiB",
+      "gpu_utilization": "36%",
+      "compute_mode": "Default",
+      "mig_mode": "Disabled"
+    },
+    {
+      "gpu_id": 4,
+      "name": "NVIDIA HGX H800 8-GPU",
+      "persistence_mode": "On",
+      "bus_id": "00000000:8A:00.0",
+      "display_active": "off",
+      "memory_usage": "1MiB / 81920MiB",
+      "gpu_utilization": "55%",
+      "compute_mode": "Default",
+      "mig_mode": "Disabled"
+    },
+    {
+      "gpu_id": 5,
+      "name": "NVIDIA HGX H800 8-GPU",
+      "persistence_mode": "On",
+      "bus_id": "00000000:8F:00.0",
+      "display_active": "off",
+      "memory_usage": "1MiB / 81920MiB",
+      "gpu_utilization": "63%",
+      "compute_mode": "Default",
+      "mig_mode": "Disabled"
+    },
+    {
+      "gpu_id": 6,
+      "name": "NVIDIA HGX H800 8-GPU",
+      "persistence_mode": "On",
+      "bus_id": "00000000:C6:00.0",
+      "display_active": "off",
+      "memory_usage": "1MiB / 81920MiB",
+      "gpu_utilization": "38%",
+      "compute_mode": "Default",
+      "mig_mode": "Disabled"
+    },
+    {
+      "gpu_id": 7,
+      "name": "NVIDIA HGX H800 8-GPU",
+      "persistence_mode": "On",
+      "bus_id": "00000000:CA:00.0",
+      "display_active": "off",
+      "memory_usage": "1MiB / 81920MiB",
+      "gpu_utilization": "55%",
+      "compute_mode": "Default",
+      "mig_mode": "Disabled"
+    }
+  ]
+}
