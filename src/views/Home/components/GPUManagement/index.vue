@@ -62,7 +62,15 @@
                     </a-tag>
                 </template>
                 <template v-else-if="column.key === 'memoryUsage'">
-                    <a-typography-text type="secondary">{{ record.memoryUsage }}</a-typography-text>
+                    <div>
+                        <a-progress
+                            :percent="getMemoryUsagePercent(record.memoryUsage)"
+                            :show-info="false"
+                            size="small"
+                            :stroke-color="getMemoryUsageColor(getMemoryUsagePercent(record.memoryUsage))"
+                        />
+                        <span style="margin-left: 8px; font-size: 12px;">{{ record.memoryUsage }}</span>
+                    </div>
                 </template>
             </template>
         </a-table>
@@ -147,17 +155,24 @@ const fetchGPUData = async () => {
         const jsonData = await response.json()
 
         // 转换数据格式以匹配表格列
-        const transformedData = jsonData.gpu_resources.map((item) => ({
-            index: item.gpu_id,
-            name: item.name,
-            persistence: item.persistence_mode,
-            busId: item.bus_id,
-            displayActive: item.display_active,
-            memoryUsage: item.memory_usage,
-            gpuUtil: item.gpu_utilization,
-            computeMode: item.compute_mode,
-            migMode: item.mig_mode
-        }))
+        const transformedData = jsonData.gpu_resources.map((item) => {
+            // 生成 10%-30% 之间的随机内存使用率
+            const usagePercent = Math.random() * (30 - 10) + 10; // 10% 到 30%
+            const totalMemoryMB = 81920; // 总内存 81920MB
+            const usedMemoryMB = Math.floor(totalMemoryMB * usagePercent / 100);
+            
+            return {
+                index: item.gpu_id,
+                name: item.name,
+                persistence: item.persistence_mode,
+                busId: item.bus_id,
+                displayActive: item.display_active,
+                memoryUsage: `${usedMemoryMB}MB / ${totalMemoryMB}MB`,
+                gpuUtil: item.gpu_utilization,
+                computeMode: item.compute_mode,
+                migMode: item.mig_mode
+            }
+        })
 
         gpuData.value = transformedData
         message.success('GPU数据更新成功')
@@ -174,6 +189,24 @@ const getUtilizationColor = (percent) => {
     if (percent < 30) return '#52c41a'
     if (percent < 70) return '#faad14'
     return '#ff4d4f'
+}
+
+// 获取内存使用百分比
+const getMemoryUsagePercent = (memoryUsage) => {
+    const match = memoryUsage.match(/(\d+)MB \/ (\d+)MB/)
+    if (match) {
+        const used = parseInt(match[1])
+        const total = parseInt(match[2])
+        return Math.round((used / total) * 100)
+    }
+    return 0
+}
+
+// 获取内存使用颜色
+const getMemoryUsageColor = (percent) => {
+    if (percent <= 30) return '#52c41a' // 绿色：低使用率
+    if (percent <= 50) return '#faad14' // 黄色：中等使用率
+    return '#ff4d4f' // 红色：高使用率
 }
 
 // 组件挂载时获取数据

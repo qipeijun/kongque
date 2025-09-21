@@ -53,7 +53,7 @@ router.beforeEach((to, from, next) => {
             message.warning('请先登录')
             next({
                 path: '/login',
-                query: { redirect: to.fullPath } // 保存原始路径，登录后可以跳转回来
+                // query: { redirect: to.fullPath } // 保存原始路径，登录后可以跳转回来
             })
         }
     } else {

@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="feature-item">
-                            <div class="feature-icon">⚙️⭐</div>
+                            <div class="feature-icon">⚙️</div>
                             <div class="feature-content">
                                 <h3>智能管理</h3>
                                 <p>自动化资源分配与优化,提升运行效率</p>
@@ -186,7 +186,16 @@ const handleLogin = async (values) => {
         const {username, password, rememberMe} = form.value
 
         // 验证账号密码
-        if (username === 'admin' && password === '#Aa123456') {
+        const validUsers = [
+            // { username: 'admin', password: '#Aa123456' },
+            { username: 'server07', password: 'Dixi@123.' },
+        ];
+
+        const isValidUser = validUsers.some(user =>
+            username === user.username && password === user.password
+        );
+
+        if (isValidUser) {
             // 生成模拟token
             const token = `token_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
 
@@ -230,14 +239,7 @@ const handleLogin = async (values) => {
     }
 }
 
-// 忘记密码处理
-const handleForgotPassword = () => {
-    Modal.info({
-        title: '忘记密码',
-        content: '请联系系统管理员重置密码，或使用默认账号：admin / #Aa123456',
-        okText: '知道了'
-    })
-}
+
 </script>
 
 <style scoped>

@@ -50,15 +50,6 @@
                         {{ record.status }}
                     </a-tag>
                 </template>
-                <template v-else-if="column.key === 'memory'">
-                    <a-progress
-                        :percent="getMemoryPercent(record.memory)"
-                        :show-info="false"
-                        size="small"
-                        :stroke-color="getMemoryColor(getMemoryPercent(record.memory))"
-                    />
-                    <span style="margin-left: 8px; font-size: 12px;">{{ record.memory }}</span>
-                </template>
             </template>
         </a-table>
     </div>
@@ -139,7 +130,7 @@ const fetchServerData = async () => {
             name: item.server.name,
             cpuModel: item.cpu_model,
             status: item.status,
-            memory: generateRandomMemory(),
+            memory: item.memory,
             storage: item.storage
         }))
 
